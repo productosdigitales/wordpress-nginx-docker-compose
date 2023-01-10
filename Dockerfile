@@ -13,3 +13,10 @@ RUN curl --location --output /usr/local/bin/mhsendmail https://github.com/mailho
 RUN echo 'sendmail_path="/usr/local/bin/mhsendmail --smtp-addr=mailhog:1025 --from=no-reply@gbp.lo"' > /usr/local/etc/php/conf.d/mailhog.ini
 
 # Note: Use docker-compose up -d --force-recreate --build when Dockerfile has changed.
+
+# Install nodejs 18.x
+RUN curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+RUN apt-get install -y nodejs
+
+# Install yarn
+RUN npm install -g yarn
