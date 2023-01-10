@@ -72,3 +72,11 @@ services:
     restart: 'no'
     volumes:
       - ./src:/var/www/html:rw,cached
+
+  composer-theme:
+    image: composer
+    container_name: ${APP_NAME}-composer-theme
+    working_dir: /var/www/html/web/app/themes/consejo-magistratura
+    restart: 'no'
+    volumes:
+      - ./src/web/app/themes/consejo-magistratura:/var/www/html/web/app/themes/consejo-magistratura:rw,cached
