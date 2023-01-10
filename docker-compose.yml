@@ -43,6 +43,10 @@ services:
     restart: always
     extra_hosts:
       - "consejo.jusbaires.local:${GATEWAY_IP}"
+    expose:
+      - 3000
+    ports:
+      - '3000:3000'
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
