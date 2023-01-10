@@ -41,6 +41,8 @@ services:
     depends_on:
       - mysql
     restart: always
+    extra_hosts:
+      - "consejo.jusbaires.local:${GATEWAY_IP}"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
